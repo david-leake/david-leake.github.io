@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>David Leake</title>
+<meta name="description" content="David Leake — behavioural scientist studying digital trace data, behavioural risk, and financial vulnerability.">
+<meta property="og:title" content="David Leake">
+<meta property="og:description" content="Behavioural scientist studying digital trace data, behavioural risk, and financial vulnerability.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<!--
+  =========================================================================
+  DAVID — things you may want to edit are clearly marked with "EDIT:" below.
+  Quick list: your title/affiliation, email address, CV link, and the bio.
+  Everything else (publications, links) is ready to go.
+  =========================================================================
+-->
+<style>
+  :root{
+    --bg:#ffffff;
+    --ink:#16181d;
+    --muted:#5b6470;
+    --faint:#8a929e;
+    --accent:#1f3a52;      /* deep slate-blue, drawn from the photo */
+    --link:#2b6cb0;
+    --link-hover:#1a4a82;
+    --hairline:#e7e9ed;
+    --rule:#d6dae1;
+    --maxw:1060px;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Inter",system-ui,-apple-system,sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  a{color:var(--link);text-decoration:none;}
+  a:hover{color:var(--link-hover);text-decoration:underline;text-underline-offset:2px;}
+  a:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:2px;}
+
+  /* ---- top nav ---- */
+  .nav{
+    border-bottom:1px solid var(--hairline);
+    position:sticky;top:0;background:rgba(255,255,255,.92);
+    backdrop-filter:saturate(140%) blur(6px);z-index:10;
+  }
+  .nav-inner{
+    max-width:var(--maxw);margin:0 auto;padding:14px 28px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+  }
+  .nav-name{
+    font-family:"Newsreader",serif;font-weight:600;font-size:19px;
+    letter-spacing:.01em;color:var(--ink);
+  }
+  .nav-name:hover{text-decoration:none;color:var(--accent);}
+  .nav-links{display:flex;gap:22px;font-size:14.5px;}
+  .nav-links a{color:var(--muted);}
+  .nav-links a:hover{color:var(--accent);text-decoration:none;}
+
+  /* ---- layout ---- */
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:56px 28px 80px;}
+  .grid{display:grid;grid-template-columns:280px 1fr;gap:64px;align-items:start;}
+
+  /* ---- sidebar ---- */
+  .side{position:sticky;top:96px;}
+  .photo{
+    width:100%;max-width:280px;border-radius:6px;display:block;
+    filter:saturate(.96);
+  }
+  .name{
+    font-family:"Newsreader",serif;font-weight:600;
+    font-size:30px;line-height:1.1;letter-spacing:-.01em;
+    margin:22px 0 10px;color:var(--ink);
+  }
+  .role-title{
+    font-family:"Newsreader",serif;font-weight:500;font-size:17px;
+    line-height:1.3;color:var(--ink);margin:0 0 5px;
+  }
+  .role{font-size:14px;line-height:1.5;color:var(--muted);margin:0 0 20px;}
+  .links{list-style:none;margin:0;padding:18px 0 0;border-top:1px solid var(--hairline);
+    display:flex;flex-direction:column;gap:9px;font-size:14.5px;}
+  .links a{color:var(--link);display:inline-flex;align-items:center;gap:9px;}
+  .links svg{width:16px;height:16px;flex:none;color:var(--faint);}
+  .links a:hover svg{color:var(--accent);}
+
+  /* ---- main content ---- */
+  .lede{
+    font-family:"Newsreader",serif;font-size:21px;line-height:1.55;
+    color:var(--ink);font-weight:400;margin:0 0 22px;
+  }
+  .body p{margin:0 0 18px;color:#2b2f37;}
+  .body p:last-child{margin-bottom:0;}
+
+  .section{margin-top:56px;}
+  .section-h{
+    font-family:"Inter",sans-serif;font-size:12.5px;font-weight:600;
+    text-transform:uppercase;letter-spacing:.13em;color:var(--accent);
+    margin:0 0 4px;
+  }
+  .section-rule{height:2px;background:var(--accent);width:34px;border:0;margin:0 0 26px;}
+
+  .intro{font-family:"Newsreader",serif;font-size:21px;line-height:1.55;color:#2b2f37;margin:0 0 30px;max-width:62ch;}
+
+  /* ---- publications ---- */
+  .pubs{list-style:none;margin:0;padding:0;}
+  .pub{
+    position:relative;padding:0 0 26px 20px;margin-bottom:26px;
+    border-bottom:1px solid var(--hairline);
+  }
+  .pub:last-child{border-bottom:0;margin-bottom:0;}
+  .pub::before{
+    content:"";position:absolute;left:0;top:6px;bottom:30px;width:2px;
+    background:var(--rule);transition:background .18s ease;border-radius:2px;
+  }
+  .pub:hover::before{background:var(--accent);}
+  .venue{
+    font-size:11.5px;font-weight:600;text-transform:uppercase;
+    letter-spacing:.1em;color:var(--faint);margin:0 0 5px;
+  }
+  .pub-title{
+    font-family:"Newsreader",serif;font-size:19px;line-height:1.35;
+    font-weight:500;color:var(--ink);margin:0 0 5px;
+  }
+  .pub-title a{color:var(--ink);}
+  .pub-title a:hover{color:var(--link-hover);text-decoration:none;}
+  .authors{font-size:14.5px;color:var(--muted);margin:0;}
+  .authors .me{color:var(--ink);font-weight:600;}
+
+  .more{font-size:15px;color:var(--muted);margin-top:28px;}
+
+  .video{margin-top:4px;}
+  .video video{
+    width:100%;max-width:440px;border-radius:6px;background:#0c0e12;
+    display:block;box-shadow:0 1px 3px rgba(20,30,45,.12);
+    /* CROP: 1:1 square framing of the portrait clip — delete the next line to revert to full video */
+    aspect-ratio:1/1;object-fit:cover;object-position:center 70%;
+  }
+  .video-cap{font-size:14px;color:var(--muted);margin:13px 0 0;}
+  .video-cap a{color:var(--link);}
+
+  footer{
+    max-width:var(--maxw);margin:0 auto;padding:26px 28px 48px;
+    border-top:1px solid var(--hairline);color:var(--faint);font-size:13px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+  }
+  footer a{color:var(--faint);}
+  footer a:hover{color:var(--accent);text-decoration:none;}
+
+  /* ---- responsive ---- */
+  @media (max-width:760px){
+    body{font-size:16px;}
+    .grid{grid-template-columns:1fr;gap:34px;}
+    .side{position:static;text-align:left;}
+    .photo{max-width:170px;}
+    .nav-links{gap:16px;}
+    .wrap{padding:38px 22px 60px;}
+    .name{font-size:27px;}
+    .lede{font-size:19px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none!important;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap" id="top">
+  <div class="grid">
+
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="side">
+      <img class="photo" src="profile.jpg" alt="David Leake">
+      <h1 class="name">David Leake</h1>
+      <p class="role-title">Lead Behavioural Scientist</p>
+      <p class="role">
+        Data &amp; AI Office<br>
+        Lloyds Banking Group
+      </p>
+      <ul class="links">
+        <li><a href="https://scholar.google.com/citations?user=_lrQfe4AAAAJ&hl=en">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 14.7L1.5 9 12 3.3 22.5 9 12 14.7zm0 2.2l7-3.8v3.6c0 1.9-3.1 3.6-7 3.6s-7-1.7-7-3.6v-3.6l7 3.8z"/></svg>
+          Google Scholar</a></li>
+        <li><a href="https://github.com/david-leake">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 5 18.3 5.3 18.3 5.3c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+          GitHub</a></li>
+        <li><a href="https://orcid.org/0000-0003-2361-9394">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zM7.4 18.4H5.5V6.9h1.9v11.5zM6.4 5.6a1.1 1.1 0 1 1 0-2.2 1.1 1.1 0 0 1 0 2.2zm12 12.8h-1.9v-5.6c0-1.4-.5-2.3-1.7-2.3-.9 0-1.5.6-1.7 1.2-.1.2-.1.5-.1.8v5.9h-1.9s0-9.6 0-11.5h1.9v1.6c.3-.5 1-1.3 2.5-1.3 1.8 0 3.1 1.2 3.1 3.7v6.5z"/></svg>
+          ORCID</a></li>
+        <li><a href="mailto:david.leake@lloydsbanking.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg>
+          Email</a></li>
+      </ul>
+    </aside>
+
+    <!-- ============ MAIN ============ -->
+    <main class="main">
+      <section id="about" class="body">
+        <p class="lede">
+          I'm a behavioural scientist. I spend my days working out what everyday,
+          large-scale data can tell us about how people behave and how to use these
+          insights to help people's lives — and when I'm not doing that, I like to
+          play music and hang out with my family.
+        </p>
+        <p class="lede">
+          By day I lead the behavioural science practice at Lloyds Banking Group,
+          somewhere in the overlap between psychology, economics, and machine
+          learning. A lot of my research uses anonymised banking data from millions
+          of people
+          to spot things that are hard to see any other way — like how gambling
+          tracks with health and wellbeing, or the small financial changes that can
+          appear years before someone starts to lose the ability to manage their own
+          money.
+        </p>
+        <p class="lede">
+          What gets me up in the morning (aside from my young daughters' terrible
+          sleeping habits) is the opportunity to make a real difference in people's
+          lives through this work — by understanding and
+          supporting our all-too-human decision-making.
+        </p>
+        <p class="lede">
+          I did my PhD in Psychology at Warwick and still work with colleagues
+          there and at Nottingham and Exeter. Some of it has ended up in
+          <em>Nature Human Behaviour</em>, <em>JAMA Network Open</em> and the
+          <em>Journal of Finance</em>, and fed into the UK's
+          review of gambling. A few of those papers are below — and the music is
+          further down.
+        </p>
+      </section>
+
+      <section id="research" class="section">
+        <p class="section-h">Research</p>
+        <hr class="section-rule">
+        <p class="intro">
+          A few selected papers — the full list lives on my
+          <a href="https://scholar.google.com/citations?user=_lrQfe4AAAAJ&hl=en">Google Scholar profile</a>.
+        </p>
+
+        <ol class="pubs">
+          <li class="pub">
+            <p class="venue">JAMA Network Open · 2025</p>
+            <p class="pub-title">
+              <a href="https://doi.org/10.1001/jamanetworkopen.2025.15894">Early behavioral markers of loss of financial capacity</a>
+            </p>
+            <p class="authors">Trendl A, Anwyl-Irvine A, Vomfell L, Abbey E, Stewart N, Atkins D, Llewellyn DJ, Gathergood J, <span class="me">Leake D</span>.</p>
+          </li>
+
+          <li class="pub">
+            <p class="venue">The Journal of Finance · 2023</p>
+            <p class="pub-title">
+              <a href="https://doi.org/10.1111/jofi.13222">Naïve buying diversification and narrow framing by individual investors</a>
+            </p>
+            <p class="authors">Gathergood J, Hirshleifer D, <span class="me">Leake D</span>, Sakaguchi H, Stewart N. <em>78(3), 1705–1741.</em></p>
+          </li>
+
+          <li class="pub">
+            <p class="venue">Nature Human Behaviour · 2021</p>
+            <p class="pub-title">
+              <a href="https://doi.org/10.1038/s41562-020-01045-w">The association between gambling and financial, social and health outcomes in big financial data</a>
+            </p>
+            <p class="authors">Muggleton N, Parpart P, Newall P, <span class="me">Leake D</span>, Gathergood J, Stewart N. <em>5(3), 319–326.</em></p>
+          </li>
+        </ol>
+      </section>
+
+      <section id="music" class="section">
+        <p class="section-h">Music</p>
+        <hr class="section-rule">
+        <p class="intro">
+          When I step away from the data, this is usually where you'll find me.
+        </p>
+        <div class="video">
+          <video controls preload="metadata" playsinline poster="music-poster.jpg">
+            <source src="music.mp4" type="video/mp4">
+            Your browser can’t play this clip.
+          </video>
+          <p class="video-cap">
+            <!-- EDIT: add a line here about the clip — what you’re playing, where it was, the band, etc. -->
+          </p>
+        </div>
+      </section>
+    </main>
+
+  </div>
+</div>
+
+<footer>
+  <span>© <span id="yr"></span> David Leake</span>
+  <span><a href="https://github.com/david-leake">github.com/david-leake</a></span>
+</footer>
+
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
